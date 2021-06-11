@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.8
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sat Sep 04 2020
@@ -9,12 +9,16 @@ run only on window, do not run in WSL ( due to no support driver)
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time, datetime
-import sys, os
+import sys, os, platform
 #from twilio.rest import Client   #pip install twilio
 import tkinter as tk
 from tkinter import *
 import re
 import pandas as pd
+
+if platform.system() != "Windows":
+	print("This tool should only run on window")
+	sys.exit()
 
 #to support send email funtion
 import smtplib,json
